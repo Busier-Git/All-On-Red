@@ -4,19 +4,56 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Vida del Enemigo")]
-    /// <summary>Puntos de vida totales del enemigo utilizando float.</summary>
     public float vidaMaxima = 3f;
+    public float velocidad = 3f;
+    public float rangoDeteccion = 8f;
+    public float distanciaParada = 0.5f;
+
     private float vidaActual;
+    private Transform jugador;
+    private Rigidbody2D rb;
 
     void Start()
     {
         vidaActual = vidaMaxima;
+        rb = GetComponent<Rigidbody2D>();
+        BuscarJugador();
     }
 
-    /// <summary>
-    /// Resta vida flotante al enemigo. Se destruye si llega a 0.
-    /// </summary>
+    void FixedUpdate()
+    {
+        if (jugador == null) return;
+
+        float distancia = Vector2.Distance(transform.position, jugador.position);
+
+        if (distancia <= rangoDeteccion && distancia > distanciaParada)
+        {
+            SeguirJugador();
+        }
+        else
+        {
+            Detenerse();
+        }
+    }
+
+    void BuscarJugador()
+    {
+        GameObject objJugador = GameObject.FindWithTag("Player");
+        if (objJugador != null)
+            jugador = objJugador.transform;
+    }
+
+    void SeguirJugador()
+    {
+        Vector2 direccion = ((Vector2)jugador.position - rb.position).normalized;
+        rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
+    }
+
+    void Detenerse()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
     public void RecibirDano(float cantidad)
     {
         vidaActual -= cantidad;
