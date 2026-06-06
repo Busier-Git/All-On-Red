@@ -20,24 +20,25 @@ public class Player : MonoBehaviour
         vidaActual = vidaMaxima;
     }
 
-    void Update()
+   void Update()
     {
-        // 2. DISPARO SOLO CON FLECHAS
+        // 2. DISPARO CONTINUO CON FLECHAS
         if (Time.time >= tiempoSiguienteDisparo)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            // Cambiamos GetKeyDown por GetKey
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 Disparar(Vector2.up);
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
                 Disparar(Vector2.down);
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Disparar(Vector2.left);
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
                 Disparar(Vector2.right);
             }
