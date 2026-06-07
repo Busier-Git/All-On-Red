@@ -25,12 +25,25 @@ public class Player : MonoBehaviour
         // 2. DISPARO CONTINUO CON FLECHAS
         if (Time.time >= tiempoSiguienteDisparo)
         {
-            // Cambiamos GetKeyDown por GetKey
+            // Disparos diagonales
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
             {
                 Disparar(new Vector2(1, 1).normalized);
             }
-            
+            else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                Disparar(new Vector2(-1, 1).normalized);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
+            {
+                Disparar(new Vector2(1, -1).normalized);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                Disparar(new Vector2(-1, -1).normalized);
+            }
+
+            // Disparos simples
             else if (Input.GetKey(KeyCode.UpArrow))
             {
                 Disparar(Vector2.up);
