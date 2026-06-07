@@ -29,7 +29,26 @@ public class Player : MonoBehaviour
     {
         if (Time.time >= tiempoSiguienteDisparo)
         {
-            if (Input.GetKey(KeyCode.UpArrow)) Disparar(Vector2.up);
+            // Disparos diagonales
+            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
+            {
+                Disparar(new Vector2(1, 1).normalized);
+            }
+
+            else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                Disparar(new Vector2(-1, 1).normalized);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
+            {
+                Disparar(new Vector2(1, -1).normalized);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                Disparar(new Vector2(-1, -1).normalized);
+            }
+
+            else if (Input.GetKey(KeyCode.UpArrow)) Disparar(Vector2.up);
             else if (Input.GetKey(KeyCode.DownArrow)) Disparar(Vector2.down);
             else if (Input.GetKey(KeyCode.LeftArrow)) Disparar(Vector2.left);
             else if (Input.GetKey(KeyCode.RightArrow)) Disparar(Vector2.right);
