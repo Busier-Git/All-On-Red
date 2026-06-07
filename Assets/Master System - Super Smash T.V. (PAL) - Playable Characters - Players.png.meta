@@ -1,0 +1,941 @@
+fileFormatVersion: 2
+guid: adfcd76d383789447829977dfa42500b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 87
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d638887deeb1245b1a0c3d80d218de
+      internalID: -2016936314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 87
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95037514cffb83640b9d40180e9139c0
+      internalID: -654679823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 87
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2916d525bfe8407449bc7a011b0297f9
+      internalID: 220807044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 87
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233076e8883c7954aa63fb2bf16e1013
+      internalID: 1513410287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 87
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fd04b4d908c0f47ba85c03b31b5afe
+      internalID: -828757278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 87
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc517a1404c4d8c4e8b3cbf01566fc0d
+      internalID: -805018837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 87
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36464953859cfe4784a7e3866bd149d
+      internalID: 1325122615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 87
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ee329ba5a7d8043bf918c3d355a670
+      internalID: -1287312791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f699d0480cb94941a77f458dc438605
+      internalID: 900830622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 66
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5ff32f74a9ade48a15f83d38c800b7
+      internalID: 1059776942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 66
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8128d426c99e3794b950e597a1e9718b
+      internalID: 899930137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 66
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8851302cbd5c5d848970ff0f3ae49552
+      internalID: -1564802720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_12
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 66
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc932f96604f51408f0f3673da7ea8d
+      internalID: -354116580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_13
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 66
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d39195613516848b213cd401d36f2f
+      internalID: -1002008388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_14
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 66
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad5e6daf8169d6499b742bb276c7dd8
+      internalID: 1706330067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_15
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 66
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426ae36f76d2d2c49bebeaaf0d51aa49
+      internalID: 1242381190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_16
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 42
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09f378310c69084db19aba6fbf212bb
+      internalID: 18997424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_17
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 42
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e50d0e45034e24b8e3f5959130d06f
+      internalID: -1545132734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_18
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 42
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1270d7d4f78b44681d0b4dfdfd50c7
+      internalID: -1254501872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 42
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469f98f4f81a23740b73bfa0982a3cf5
+      internalID: -1133545942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_20
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 42
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba08060dbc9b8c4bb8b742ae9f118c5
+      internalID: -1444931981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 42
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7486ec220bb957145863307476d1a74f
+      internalID: 221480645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 42
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e17c59e0b53842419310ffe5cbb1b72
+      internalID: -678969257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 42
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8db489b1bb7de4990175c32f60c157
+      internalID: 1731783322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fe129d81db23145bf2bad6746189ce
+      internalID: -615512609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 16
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d127a022d1bcfa041b822e90a463d006
+      internalID: 1195037995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_26
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 16
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f949a29de46b14d9e4572fd68de72c
+      internalID: 1882407866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_27
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 16
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe41f76f122e1f47b881a8b8a5ad810
+      internalID: 1523163688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_28
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 16
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e18f4a37d81ab47b07cb4fcd64a49c
+      internalID: -696336212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_29
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 16
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21dee35b48b592469621e8c89dbc1b7
+      internalID: -2035038078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_30
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 16
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cf50cdb643fcb4c956c0fc21647925
+      internalID: 2057434319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_31
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 16
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300dbe5da042fed42862688ee030a025
+      internalID: -637907007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_32
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191ce9392d595e24b8e717ede1eab4d4
+      internalID: -401916618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdae39f707672154c8dcb2075853d17d
+      internalID: -1189623350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_34
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 28
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b9e46ad5d01ec459cd4d1308867ab0
+      internalID: 1087700735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 30
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024cf74ebbda02643a41f2d2a5cf5aa4
+      internalID: 1702657302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Super Smash T.V. (PAL) - Playable Characters - Players_36
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb76fcad5d05dda4191ebf03bc0027aa
+      internalID: 94939589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_0: -2016936314
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_1: -654679823
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_10: 899930137
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_11: -1564802720
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_12: -354116580
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_13: -1002008388
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_14: 1706330067
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_15: 1242381190
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_16: 18997424
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_17: -1545132734
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_18: -1254501872
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_19: -1133545942
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_2: 220807044
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_20: -1444931981
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_21: 221480645
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_22: -678969257
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_23: 1731783322
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_24: -615512609
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_25: 1195037995
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_26: 1882407866
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_27: 1523163688
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_28: -696336212
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_29: -2035038078
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_3: 1513410287
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_30: 2057434319
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_31: -637907007
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_32: -401916618
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_33: -1189623350
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_34: 1087700735
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_35: 1702657302
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_36: 94939589
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_4: -828757278
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_5: -805018837
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_6: 1325122615
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_7: -1287312791
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_8: 900830622
+      Master System - Super Smash T.V. (PAL) - Playable Characters - Players_9: 1059776942
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

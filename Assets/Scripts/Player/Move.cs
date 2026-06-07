@@ -8,6 +8,7 @@ public class Move : MonoBehaviour
     
     private Rigidbody2D rb;
     private Vector2 direccionMovimiento;
+    public Animator animator;
 
     void Start()
     {
@@ -26,6 +27,30 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) movY -= 1f;
 
         direccionMovimiento = new Vector2(movX, movY).normalized;
+
+        ActualizarAnimacion(movX, movY);
+    }
+
+   void ActualizarAnimacion(float movX, float movY)
+    {
+        animator.SetBool("up",        false);
+        animator.SetBool("down",      false);
+        animator.SetBool("left",      false);
+        animator.SetBool("right",     false);
+        animator.SetBool("leftUp",    false);
+        animator.SetBool("rightUp",   false);
+        animator.SetBool("leftDown",  false);
+        animator.SetBool("rightDown", false);
+
+        if      (movX > 0 && movY > 0) animator.SetBool("rightUp",   true);
+        else if (movX < 0 && movY > 0) animator.SetBool("leftUp",    true);
+        else if (movX > 0 && movY < 0) animator.SetBool("rightDown", true);
+        else if (movX < 0 && movY < 0) animator.SetBool("leftDown",  true);
+        else if (movX > 0)             animator.SetBool("right",     true);
+        else if (movX < 0)             animator.SetBool("left",      true);
+        else if (movY > 0)             animator.SetBool("up",        true);
+        else if (movY < 0)             animator.SetBool("down",      true);
+        // todos en false → idle
     }
 
     void FixedUpdate()
