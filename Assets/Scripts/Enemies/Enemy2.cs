@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
+    [Header("Sistema de Vida")]
+    public float vidaMaxima = 3f;
+    private float vidaActual;
+
     [Header("Movimiento")]
     public float velocidad = 1.5f;
 
@@ -19,7 +23,9 @@ public class Enemigo : MonoBehaviour
 
     void Start()
     {
-        // Busca al jugador automáticamente
+        // Igual que Enemy: inicializar vida y buscar jugador
+        vidaActual = vidaMaxima;
+
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         if (obj != null)
             jugador = obj.transform;
@@ -33,14 +39,12 @@ public class Enemigo : MonoBehaviour
 
         if (distancia <= rangoDeteccion)
         {
-            // Seguir al jugador lentamente
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 jugador.position,
                 velocidad * Time.deltaTime
             );
 
-            // Disparar al jugador
             if (Time.time >= tiempoSiguienteDisparo)
             {
                 Disparar();
@@ -61,7 +65,24 @@ public class Enemigo : MonoBehaviour
             rb.velocity = direccion * velocidadProyectil;
     }
 
-    // Visualizar el rango en el Editor
+    /// <summary>
+    /// Igual que Enemy.RecibirDano — resta vida y destruye si llega a 0.
+    /// </summary>
+    public void RecibirDano(float cantidad)
+    {
+        vidaActual -= cantidad;
+        Debug.Log("Enemigo recibió " + cantidad + " de daño. Vida restante: " + vidaActual);
+
+        if (vidaActual <= 0)
+            Morir();
+    }
+
+    private void Morir()
+    {
+        Debug.Log("Enemigo eliminado.");
+        Destroy(gameObject);
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
