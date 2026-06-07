@@ -26,7 +26,12 @@ public class Player : MonoBehaviour
         if (Time.time >= tiempoSiguienteDisparo)
         {
             // Cambiamos GetKeyDown por GetKey
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
+            {
+                Disparar(new Vector2(1, 1).normalized);
+            }
+            
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
                 Disparar(Vector2.up);
             }
