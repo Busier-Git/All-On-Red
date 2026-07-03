@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private float vidaActual;
     private Transform jugador;
     private Rigidbody2D rb;
+    private Animator anim;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direccion = ((Vector2)jugador.position - rb.position).normalized;
         rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
+
     }
 
     void Detenerse()
