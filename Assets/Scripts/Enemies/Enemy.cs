@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour, IDanable
     private float vidaActual;
     private Transform jugador;
     private Rigidbody2D rb;
+    private Animator anim;
 
     void Start()
     {

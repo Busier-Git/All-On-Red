@@ -1,0 +1,1381 @@
+fileFormatVersion: 2
+guid: bcbf8f339ec5d2b49af9f29b66acb351
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_0
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1169
+        width: 59
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521fa4262f601ec4ead3ab54d1d1fbbe
+      internalID: 673447192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_1
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1169
+        width: 58
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429f68c462091164da5aa1805cf527bf
+      internalID: 704265214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1172
+        width: 58
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ab3b09ebd80c34d830413cb4b2ce72
+      internalID: -1613587145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_3
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1169
+        width: 59
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad281b0c19c2904396e1a050d5cfc2a
+      internalID: -2007578170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_4
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1170
+        width: 59
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39dd6b4ffe6857b418d46169ff93d1ef
+      internalID: 880552218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_5
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1172
+        width: 87
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821ee3f67a4cddf4a8a215f72c185cdf
+      internalID: 1727045783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_6
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1011
+        width: 70
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592f81df66a32ac48ade123aa9d097f8
+      internalID: -1607838243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_7
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1011
+        width: 70
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbfe1ecfecc2bf4aa67a23a4de20523
+      internalID: -391244208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 1011
+        width: 70
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4ae97284d54b441a043d58528ce3c7
+      internalID: 1870539960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_9
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1011
+        width: 70
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019e1832f39075549b64eaaa467be7d5
+      internalID: 731537206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_10
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1011
+        width: 70
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cebbedf7c459144b84ee8bf9a50844
+      internalID: 1231334438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1011
+        width: 89
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa66030673cad4b41a0993a6c784b73b
+      internalID: -904211316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_12
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 848
+        width: 93
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9760e6cd979b624c855d190d81e5286
+      internalID: 530345939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_13
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 848
+        width: 97
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e521c5ac415c442b86b7b0982ea155
+      internalID: -1283978580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_14
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 848
+        width: 95
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ba9a9e25b0c8745bcbb133ba81691d
+      internalID: 1017391476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_15
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 845
+        width: 81
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3448b40505c44545841ca9d88a2887b
+      internalID: 538239043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_16
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 846
+        width: 74
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83fb0cb86cc67b4985821702ba70ae4
+      internalID: -1750496547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_17
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 848
+        width: 87
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d2b0c2ebf460d4487f1890c4055466
+      internalID: 996385768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_18
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 849
+        width: 96
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92504d122099f0459c4b9dca2c571c0
+      internalID: -631176734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 696
+        width: 94
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5159a5ebb986f744bbeddf735dc63e7e
+      internalID: 1299838640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 695
+        width: 90
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b49ecd117af7c44a562b930fd93439
+      internalID: 1852593792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_21
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 696
+        width: 90
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc405c3b84011d1488c19b6a144408c2
+      internalID: 40791514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_22
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 696
+        width: 83
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480d522d381a3e34bb9dc2e371cf671d
+      internalID: -217447641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 696
+        width: 81
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27baee7cdda63741850b09e51ee5879
+      internalID: -1035582728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_24
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 698
+        width: 87
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267aa32dbff6dda4196d4acf3d22258e
+      internalID: -298883649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_25
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 697
+        width: 93
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa6fc782f93c6f4da2e145d8cd790ef
+      internalID: -1032412752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_26
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 534
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2496d03005fdef84d919e24dd15035d2
+      internalID: -1013072114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_27
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 528
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15228c6276103ee478d8cf374686357c
+      internalID: -1941649835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_28
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 528
+        width: 55
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fbc9a16d8757f46b5166d2f539ac20
+      internalID: 632689234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_29
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 528
+        width: 55
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf0561feba27a4e851681beefe896c
+      internalID: 857437861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_30
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 528
+        width: 54
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0324cb59b349964580a911fafd93202
+      internalID: -1203853068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_31
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 533
+        width: 55
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3586d2d79a170184ea92f8e4e4b4fe4c
+      internalID: 1464826694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_32
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 528
+        width: 77
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6643e5fc8984d7f40a8a9fe1f0a65992
+      internalID: 1987441417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_33
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 381
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd2997c90443614f93202b3652fdfca
+      internalID: -69066803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_34
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 385
+        width: 56
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14e15652af4c844baa444bea9d8252d
+      internalID: -991825840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_35
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 387
+        width: 55
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982ace4f1bd6ecd46acb77ab62bcc52d
+      internalID: 1404029452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_36
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 386
+        width: 55
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfad41e471855b43a2ed3d140cf6e50
+      internalID: 1735557574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_37
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 385
+        width: 55
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ba65a5aac2a3349b5cddb908991d49
+      internalID: -974045647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_38
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 385
+        width: 57
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739031e151fba254eb41abc00b64cab3
+      internalID: -1675223384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_39
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 382
+        width: 80
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3443608db8a51fb42b59e125c678db27
+      internalID: -1317348582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 243
+        width: 132
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70cdb4172ed98a47970b340ce02f18b
+      internalID: -775786799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 247
+        width: 130
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7bc6dde09217f4b8e3b8b18961cd3b
+      internalID: -1513740421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_42
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 251
+        width: 127
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674c78ae107c41e4b8351ea16c083c2f
+      internalID: 530684766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_43
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 243
+        width: 139
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fff2613ac3b5f40b0dd49ba851b339
+      internalID: 119417873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_44
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 233
+        width: 142
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da9abf44d60711438a3e191c92e1c92
+      internalID: -35808916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_45
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 236
+        width: 133
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc7c406af99c5f478f16194a5fb9e0d
+      internalID: 2002984300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_46
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 164
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc98a7f8f65a274aa4473557e195e3d
+      internalID: -905937841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_47
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 105
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ab624b44c333e4798af09f05bf1a7d
+      internalID: 2140773433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_48
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 82
+        width: 146
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d938d89c3f6144ba6be5ffcb681801
+      internalID: -1492365070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_49
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 102
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f882dee506d5ee40a99d713a230037c
+      internalID: 680824633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_50
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 77
+        width: 153
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576e06e50cca267488ce6b804a3d9f9f
+      internalID: -278170795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_51
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 104
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454adc3917f72d441b730fb24b4d214d
+      internalID: -536542668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_52
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 84
+        width: 143
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0378c9207856f04d94c93516fc3dd4d
+      internalID: -670929251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_53
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 102
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac94667be9338f4ba4164ab0ec4eef0
+      internalID: 218730656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_54
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 77
+        width: 151
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ad55b8b156d6848b180eed86b5de4f
+      internalID: -1002941989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_55
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 77
+        width: 183
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b308582a91cf349b30367af45cc035
+      internalID: 789674306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1 AllOnRed_56
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 77
+        width: 154
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea29449be18f2c438d4a260713d434d
+      internalID: 1068075382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      enemy1 AllOnRed_0: 673447192
+      enemy1 AllOnRed_1: 704265214
+      enemy1 AllOnRed_10: 1231334438
+      enemy1 AllOnRed_11: -904211316
+      enemy1 AllOnRed_12: 530345939
+      enemy1 AllOnRed_13: -1283978580
+      enemy1 AllOnRed_14: 1017391476
+      enemy1 AllOnRed_15: 538239043
+      enemy1 AllOnRed_16: -1750496547
+      enemy1 AllOnRed_17: 996385768
+      enemy1 AllOnRed_18: -631176734
+      enemy1 AllOnRed_19: 1299838640
+      enemy1 AllOnRed_2: -1613587145
+      enemy1 AllOnRed_20: 1852593792
+      enemy1 AllOnRed_21: 40791514
+      enemy1 AllOnRed_22: -217447641
+      enemy1 AllOnRed_23: -1035582728
+      enemy1 AllOnRed_24: -298883649
+      enemy1 AllOnRed_25: -1032412752
+      enemy1 AllOnRed_26: -1013072114
+      enemy1 AllOnRed_27: -1941649835
+      enemy1 AllOnRed_28: 632689234
+      enemy1 AllOnRed_29: 857437861
+      enemy1 AllOnRed_3: -2007578170
+      enemy1 AllOnRed_30: -1203853068
+      enemy1 AllOnRed_31: 1464826694
+      enemy1 AllOnRed_32: 1987441417
+      enemy1 AllOnRed_33: -69066803
+      enemy1 AllOnRed_34: -991825840
+      enemy1 AllOnRed_35: 1404029452
+      enemy1 AllOnRed_36: 1735557574
+      enemy1 AllOnRed_37: -974045647
+      enemy1 AllOnRed_38: -1675223384
+      enemy1 AllOnRed_39: -1317348582
+      enemy1 AllOnRed_4: 880552218
+      enemy1 AllOnRed_40: -775786799
+      enemy1 AllOnRed_41: -1513740421
+      enemy1 AllOnRed_42: 530684766
+      enemy1 AllOnRed_43: 119417873
+      enemy1 AllOnRed_44: -35808916
+      enemy1 AllOnRed_45: 2002984300
+      enemy1 AllOnRed_46: -905937841
+      enemy1 AllOnRed_47: 2140773433
+      enemy1 AllOnRed_48: -1492365070
+      enemy1 AllOnRed_49: 680824633
+      enemy1 AllOnRed_5: 1727045783
+      enemy1 AllOnRed_50: -278170795
+      enemy1 AllOnRed_51: -536542668
+      enemy1 AllOnRed_52: -670929251
+      enemy1 AllOnRed_53: 218730656
+      enemy1 AllOnRed_54: -1002941989
+      enemy1 AllOnRed_55: 789674306
+      enemy1 AllOnRed_56: 1068075382
+      enemy1 AllOnRed_6: -1607838243
+      enemy1 AllOnRed_7: -391244208
+      enemy1 AllOnRed_8: 1870539960
+      enemy1 AllOnRed_9: 731537206
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
