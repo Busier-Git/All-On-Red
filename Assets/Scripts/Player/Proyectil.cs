@@ -18,25 +18,16 @@ public class Proyectil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Comprobamos si el proyectil impactó contra un enemigo (usando el tag correcto)
-        if (collision.gameObject.CompareTag("enemy"))
-        {
-            // 1. Buscamos si el enemigo tiene el script original "Enemy"
-            Enemy scriptEnemy = collision.gameObject.GetComponent<Enemy>();
-            if (scriptEnemy != null)
-            {
-                scriptEnemy.RecibirDano(dano);
-            }
+        // Ignoramos otros triggers (monedas, zonas de sala, otras balas) y al propio jugador
+        if (collision.isTrigger) return;
+        if (collision.CompareTag("Player")) return;
 
-            // 2. Buscamos si el enemigo tiene tu nuevo script "Enemigo" (Enemy2)
-            Enemigo scriptEnemigo = collision.gameObject.GetComponent<Enemigo>();
-            if (scriptEnemigo != null)
-            {
-                scriptEnemigo.RecibirDano(dano);
-            }
+        // Si lo que tocamos puede recibir daño (enemigos, jefe, obstaculos destructibles), se lo hacemos
+        IDanable danable = collision.GetComponent<IDanable>();
+        if (danable != null)
+            danable.RecibirDano(dano);
 
-            // Destruimos el proyectil tras el impacto para que no los atraviese
-            Destroy(gameObject);
-        }
+        // Choco contra algo solido (enemigo, obstaculo o pared) -> el proyectil se destruye
+        Destroy(gameObject);
     }
 }

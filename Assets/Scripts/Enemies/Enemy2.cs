@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemigo : MonoBehaviour
+public class Enemigo : MonoBehaviour, IDanable
 {
     [Header("Sistema de Vida")]
     public float vidaMaxima = 3f;
@@ -18,6 +18,16 @@ public class Enemigo : MonoBehaviour
     [Header("Detección")]
     public float rangoDeteccion = 10f;
 
+    [Header("Evitar obstaculos")]
+    public float distanciaSensor = 1.8f;
+    private RaycastHit2D[] sensorHits = new RaycastHit2D[8];
+    private float radio = 0.5f;
+
+    [Header("Daño por contacto")]
+    public float danoContacto = 1f;
+    public float intervaloDano = 1f;
+    private float tiempoUltimoDano = -999f;
+
     private Transform jugador;
     private float tiempoSiguienteDisparo = 0f;
 
@@ -29,6 +39,9 @@ public class Enemigo : MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         if (obj != null)
             jugador = obj.transform;
+
+        CircleCollider2D col = GetComponent<CircleCollider2D>();
+        if (col != null) radio = col.radius * Mathf.Max(transform.localScale.x, transform.localScale.y);
     }
 
     void Update()
@@ -39,11 +52,9 @@ public class Enemigo : MonoBehaviour
 
         if (distancia <= rangoDeteccion)
         {
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                jugador.position,
-                velocidad * Time.deltaTime
-            );
+            Vector2 deseada = ((Vector2)jugador.position - (Vector2)transform.position).normalized;
+            Vector2 mover = Navegacion.DireccionEvitando(transform.position, deseada, gameObject, radio, distanciaSensor, sensorHits);
+            transform.position += (Vector3)(mover * velocidad * Time.deltaTime);
 
             if (Time.time >= tiempoSiguienteDisparo)
             {
@@ -65,6 +76,23 @@ public class Enemigo : MonoBehaviour
             rb.velocity = direccion * velocidadProyectil;
     }
 
+    // --- Daño por contacto al jugador (con cooldown) ---
+    private void OnCollisionEnter2D(Collision2D collision) { IntentarDanar(collision.gameObject); }
+    private void OnCollisionStay2D(Collision2D collision)  { IntentarDanar(collision.gameObject); }
+
+    private void IntentarDanar(GameObject obj)
+    {
+        if (!obj.CompareTag("Player")) return;
+        if (Time.time < tiempoUltimoDano + intervaloDano) return;
+
+        Player jugadorScript = obj.GetComponent<Player>();
+        if (jugadorScript != null)
+        {
+            jugadorScript.RecibirDano(Mathf.RoundToInt(danoContacto));
+            tiempoUltimoDano = Time.time;
+        }
+    }
+
     /// <summary>
     /// Igual que Enemy.RecibirDano — resta vida y destruye si llega a 0.
     /// </summary>
@@ -80,6 +108,7 @@ public class Enemigo : MonoBehaviour
     private void Morir()
     {
         Debug.Log("Enemigo eliminado.");
+        GetComponent<Botin>()?.Soltar();   // posibilidad de soltar monedas
         Destroy(gameObject);
     }
 
