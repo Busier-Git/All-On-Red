@@ -109,6 +109,7 @@ public class Enemigo : MonoBehaviour, IDanable
     {
         Debug.Log("Enemigo eliminado.");
         GetComponent<Botin>()?.Soltar();   // posibilidad de soltar monedas
+        GestorAudio.Efecto("enemigo_muere");
         Destroy(gameObject);
     }
 

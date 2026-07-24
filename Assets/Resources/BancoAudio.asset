@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c4279c5af72234aa048dd371783b5c, type: 3}
+  m_Name: BancoAudio
+  m_EditorClassIdentifier: 
+  musicaMenu: {fileID: 0}
+  musicaNivel1: {fileID: 0}
+  musicaNivel2: {fileID: 0}
+  disparo: {fileID: 0}
+  disparoRayo: {fileID: 0}
+  disparoGranada: {fileID: 0}
+  explosion: {fileID: 0}
+  jugadorDano: {fileID: 0}
+  enemigoMuere: {fileID: 0}
+  jefeRayo: {fileID: 0}
+  jefeTeleport: {fileID: 0}
+  recogerMoneda: {fileID: 0}
+  recogerObjeto: {fileID: 0}
+  recogerCorazon: {fileID: 0}
+  abrirPuerta: {fileID: 0}
+  extra: []

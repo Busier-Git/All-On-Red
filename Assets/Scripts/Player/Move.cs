@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 direccionMovimiento;
+    private Player player;   // para sumar el empujon al recibir daño
     public Animator animator;
 
     // Hacia donde "mira" el jugador. Empieza mirando hacia abajo.
@@ -14,6 +15,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -82,6 +84,8 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = direccionMovimiento * velocidad;
+        // Movimiento normal + empujon (knockback) que aporta Player al recibir daño
+        Vector2 extra = (player != null) ? player.Empuje : Vector2.zero;
+        rb.velocity = direccionMovimiento * velocidad + extra;
     }
 }

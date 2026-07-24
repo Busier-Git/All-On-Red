@@ -99,8 +99,11 @@ public class Jefe : MonoBehaviour, IDanable
         if (vidaActual <= 0f)
         {
             GetComponent<Botin>()?.Soltar();
+            GestorAudio.Efecto("enemigo_muere");
+            // Avisa al generador: suelta un corazon y crea el portal al siguiente nivel
+            if (GeneradorMapa.Instancia != null)
+                GeneradorMapa.Instancia.AlMorirJefe(transform.position);
             Destroy(gameObject);
-            // (Mas adelante: aqui puedes abrir una escotilla para pasar de piso)
         }
     }
 

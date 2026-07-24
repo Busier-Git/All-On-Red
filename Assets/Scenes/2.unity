@@ -439,14 +439,6 @@ MonoBehaviour:
   prefabProyectil: {fileID: 8670481411000982004, guid: 9973bd07f3fba0c4abf8a928b43af7de, type: 3}
   velocidadProyectil: 12
   cadenciaDisparo: 0.5
-  duracionInvulnerable: 1.5
-  fuerzaEmpuje: 8
-  danoExtra: 0
-  multCadencia: 1
-  disparosExtra: 0
-  teledirigido: 0
-  rayoBrimstone: 0
-  lanzaGranadas: 1
 --- !u!114 &438171304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +650,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -894,22 +886,10 @@ MonoBehaviour:
   obstaculosMax: 3
   prefabBala: {fileID: 7443122209396402659, guid: d2272d0bdbceb3d4d8a0466bfa6ccf42, type: 3}
   prefabMoneda: {fileID: 1047149944582024625, guid: 0f0d7935f4b824e43b01017cd1d0dc18, type: 3}
-  prefabsEnemigos: []
-  prefabJefe: {fileID: 0}
-  prefabJefeNivel2: {fileID: 0}
-  forzarNivel: 0
-  nivel: 1
-  precioObjetoTienda: 10
-  precioCorazonTienda: 3
-  probObjetoEnTienda: 0.7
-  costoSalaEspecialNivel2: 5
-  probSalaEspecialVacia: 0.25
   spriteSuelo: {fileID: 0}
   spritePared: {fileID: 0}
   spriteObstaculoRoca: {fileID: 0}
   spriteObstaculoCaja: {fileID: 0}
-  decoracionesMin: 2
-  decoracionesMax: 5
   colorSuelo: {r: 0.13, g: 0.1, b: 0.13, a: 1}
   colorPared: {r: 0.33, g: 0.12, b: 0.14, a: 1}
   jugador: {fileID: 438171308}

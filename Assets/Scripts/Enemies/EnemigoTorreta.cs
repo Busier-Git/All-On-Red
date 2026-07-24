@@ -79,6 +79,7 @@ public class EnemigoTorreta : MonoBehaviour, IDanable
         if (vidaActual <= 0f)
         {
             GetComponent<Botin>()?.Soltar();
+            GestorAudio.Efecto("enemigo_muere");
             Destroy(gameObject);
         }
     }

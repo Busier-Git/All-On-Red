@@ -14,6 +14,7 @@ public class coin : MonoBehaviour
             if (GameManager.Instance != null)
                 GameManager.Instance.AgregarMonedas(valor);
 
+            GestorAudio.Efecto("moneda");
             Destroy(gameObject);
         }
     }

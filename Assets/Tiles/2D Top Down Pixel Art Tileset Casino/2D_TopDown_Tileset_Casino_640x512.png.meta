@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -4504,7 +4504,7 @@ TextureImporter:
         serializedVersion: 2
         x: 240
         y: 368
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -4515,27 +4515,6 @@ TextureImporter:
       bones: []
       spriteID: 832fba402a2d5fc47a533482f0126971
       internalID: -581578722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_326
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 368
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afa696837d4093845a822f6662fc4dd9
-      internalID: 1424194578
       vertices: []
       indices: 
       edges: []
@@ -6540,9 +6519,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 240
+        y: 208
         width: 16
-        height: 16
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6846,27 +6825,6 @@ TextureImporter:
       bones: []
       spriteID: 98f3424cf6635b94abda94b14077b192
       internalID: -2103002932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_662
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 686df92324cec9740abaa321fc93886a
-      internalID: 1838904643
       vertices: []
       indices: 
       edges: []
@@ -7224,27 +7182,6 @@ TextureImporter:
       bones: []
       spriteID: edd91e02f55b00c49a700bdea9e11356
       internalID: -955883802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_702
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 598f583943baac24f8ad0f95f37722b8
-      internalID: -1872782551
       vertices: []
       indices: 
       edges: []
@@ -8263,7 +8200,7 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 144
-        width: 16
+        width: 64
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -8274,69 +8211,6 @@ TextureImporter:
       bones: []
       spriteID: 18db6a81c8b3a6549958d12f7fe02a94
       internalID: 290731635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_860
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6cf1bc75f711734d81ee161a079460b
-      internalID: -541403971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_861
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fb2fc63d5306354ea9226f8d173a1f8
-      internalID: -1093432322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2D_TopDown_Tileset_Casino_640x512_862
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f68ce5e56a94dfa47b2ab730ac665ad2
-      internalID: 95680692
       vertices: []
       indices: 
       edges: []

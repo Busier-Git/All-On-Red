@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Genera el piso estilo The Binding of Isaac, ahora con salas de varios tamaños
@@ -42,13 +43,29 @@ public class GeneradorMapa : MonoBehaviour
 
     [Header("Prefabs de enemigos (si los asignas se usan; si no, se crean por codigo)")]
     public GameObject[] prefabsEnemigos;   // pool de enemigos normales (usa el menu Roguelike > Crear prefabs de enemigos)
-    public GameObject prefabJefe;          // enemigo jefe
+    public GameObject prefabJefe;          // enemigo jefe (nivel 1)
+    public GameObject prefabJefeNivel2;    // jefe del nivel 2 (vacio = Adversario por codigo)
 
-    [Header("Sprites opcionales (vacio = usa colores)")]
+    [Header("Nivel (0 = auto por nombre de escena: 'test'=1, '2'=2)")]
+    public int forzarNivel = 0;
+    [HideInInspector] public int nivel = 1;
+
+    [Header("Objetos y tienda")]
+    public int precioObjetoTienda = 10;
+    public int precioCorazonTienda = 3;
+    [Range(0f, 1f)] public float probObjetoEnTienda = 0.7f;      // si falla: la tienda solo tiene corazon
+    public int costoSalaEspecialNivel2 = 5;                      // peaje de tesoro/tienda en nivel 2
+    [Range(0f, 1f)] public float probSalaEspecialVacia = 0.25f;  // nivel 2: la sala puede estar vacia
+
+    [Header("Sprites opcionales (vacio = usa el Banco de Sprites, y si no, colores)")]
     public Sprite spriteSuelo;
     public Sprite spritePared;
     public Sprite spriteObstaculoRoca;
     public Sprite spriteObstaculoCaja;
+
+    [Header("Decoracion del piso (sprites en el Banco de Sprites > decoraciones)")]
+    public int decoracionesMin = 2;   // por celda de sala
+    public int decoracionesMax = 5;
     public Color colorSuelo = new Color(0.13f, 0.10f, 0.13f);
     public Color colorPared = new Color(0.33f, 0.12f, 0.14f);
 
@@ -57,9 +74,12 @@ public class GeneradorMapa : MonoBehaviour
 
     int[,] idCelda;                         // -1 vacio, si no el id de la sala
     readonly List<Sala> salas = new List<Sala>();
+    // Una sola puerta por pared compartida: la clave es la arista entre dos celdas.
+    readonly Dictionary<long, Puerta> puertasCompartidas = new Dictionary<long, Puerta>();
     Vector2Int inicio;
 
-    Sprite _blanco, _verde, _rojo;
+    Sprite _blanco, _verde, _rojo, _dorado;
+    Vector2 centroSalaJefe;   // para colocar el portal al morir el jefe
 
     static readonly Vector2Int[] DIRS = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
 
@@ -92,7 +112,14 @@ public class GeneradorMapa : MonoBehaviour
         return lista;
     }
 
-    void Awake() { Instancia = this; }
+    void Awake()
+    {
+        Instancia = this;
+
+        // Nivel automatico segun el nombre de la escena ("test" = 1, "2" = 2)
+        if (forzarNivel > 0) nivel = forzarNivel;
+        else nivel = (SceneManager.GetActiveScene().name.Trim() == "2") ? 2 : 1;
+    }
 
     void Start()
     {
@@ -100,6 +127,17 @@ public class GeneradorMapa : MonoBehaviour
         {
             GameObject pj = GameObject.FindWithTag("Player");
             if (pj != null) jugador = pj.transform;
+        }
+
+        // Sprites centralizados: lo que no asignes aqui se toma del Banco de Sprites.
+        // El suelo y la pared cambian segun el nivel (nivel 2 tiene los suyos).
+        BancoSprites banco = BancoSprites.Cargar();
+        if (banco != null)
+        {
+            if (spriteSuelo == null) spriteSuelo = banco.SueloDeNivel(nivel);
+            if (spritePared == null) spritePared = banco.ParedDeNivel(nivel);
+            if (spriteObstaculoRoca == null) spriteObstaculoRoca = banco.roca;
+            if (spriteObstaculoCaja == null) spriteObstaculoCaja = banco.caja;
         }
 
         if (prefabBala == null)
@@ -115,6 +153,7 @@ public class GeneradorMapa : MonoBehaviour
         if (salas.Count < minSalas) { Debug.LogError("GeneradorMapa: no se pudo generar el piso."); return; }
 
         AsignarTipos();
+        puertasCompartidas.Clear();   // una sola puerta por pared compartida entre dos salas
         foreach (var s in salas) ConstruirSala(s);
         ColocarJugador();
     }
@@ -360,6 +399,9 @@ public class GeneradorMapa : MonoBehaviour
         // Piso
         CrearCuadro("Piso", raiz.transform, Vector2.zero, tamMundo - Vector2.one * grosorPared, spriteSuelo, colorSuelo, false, -10);
 
+        // Decoracion del piso (manchas, grietas, etc. del Banco de Sprites)
+        CrearDecoraciones(s, raiz.transform, centro);
+
         // Bordes: pared o puerta segun el vecino de cada celda-borde
         List<Puerta> puertas = new List<Puerta>();
         foreach (var c in s.Celdas())
@@ -369,15 +411,18 @@ public class GeneradorMapa : MonoBehaviour
                 if (EnRango(n) && idCelda[n.x, n.y] == s.id) continue;   // borde interno
                 bool esPuerta = EnRango(n) && idCelda[n.x, n.y] >= 0;    // vecino de OTRA sala
                 Vector2 bordeMundo = CeldaAMundo(new Vector2(c.x, c.y)) + new Vector2(d.x * tamCelda.x / 2f, d.y * tamCelda.y / 2f);
-                CrearBorde(raiz.transform, bordeMundo - centro, d, esPuerta, puertas);
+                CrearBorde(raiz.transform, bordeMundo - centro, d, esPuerta, puertas, c, n);
             }
 
-        // Trigger de deteccion
+        // Trigger de deteccion.
+        // ARREGLO PUERTAS: antes el trigger quedaba muy metido hacia adentro
+        // (grosorPared * 3) y habia que entrar mucho en la sala para que contara.
+        // Ahora llega casi hasta la pared: cruzas la puerta y cambia al tiro.
         GameObject zona = new GameObject("ZonaSala");
         zona.transform.SetParent(raiz.transform, false);
         BoxCollider2D trig = zona.AddComponent<BoxCollider2D>();
         trig.isTrigger = true;
-        trig.size = tamMundo - Vector2.one * (grosorPared * 3f);
+        trig.size = tamMundo - Vector2.one * (grosorPared * 1.2f);
         zona.AddComponent<DetectorSala>().habitacion = hab;
 
         // Contenedores
@@ -397,10 +442,61 @@ public class GeneradorMapa : MonoBehaviour
         {
             SpawnObstaculos(s, contObst, ocupados, puertasPos, 6f);  // deja el centro libre para esquivar
             SpawnJefe(contEnem, enemigos, centro);
+            centroSalaJefe = centro;
         }
-        // Inicio / Tesoro / Tienda: vacias (luego pones items o la tienda)
+        else if (s.tipo == TipoSala.Tesoro)
+        {
+            ConstruirTesoro(centro, raiz.transform);
+        }
+        else if (s.tipo == TipoSala.Tienda)
+        {
+            ConstruirTienda(centro, raiz.transform);
+        }
+
+        // NIVEL 2: entrar a las salas especiales cuesta monedas (puertas con peaje)
+        if (nivel >= 2 && (s.tipo == TipoSala.Tesoro || s.tipo == TipoSala.Tienda))
+        {
+            BancoSprites bancoP = BancoSprites.Cargar();
+            Sprite sprPeaje = (bancoP != null && bancoP.puertaPeaje != null) ? bancoP.puertaPeaje : Dorado();
+            foreach (var pu in puertas)
+            {
+                Vector3 posPuerta = pu.transform.position;
+                Vector3 haciaAfuera = (posPuerta - (Vector3)centro).normalized;
+                pu.ConfigurarPeaje(costoSalaEspecialNivel2, sprPeaje, posPuerta + haciaAfuera * 1.6f);
+            }
+        }
 
         hab.Configurar(puertas, contEnem, enemigos);
+    }
+
+    // Reparte sprites de decoracion al azar por el piso de la sala (sin colliders)
+    void CrearDecoraciones(Sala s, Transform raiz, Vector2 centro)
+    {
+        BancoSprites banco = BancoSprites.Cargar();
+        if (banco == null) return;
+        Sprite[] deco = banco.DecoracionesDeNivel(nivel);   // decoracion segun el nivel
+        if (deco == null || deco.Length == 0) return;
+
+        int area = s.tam.x * s.tam.y;
+        int cantidad = Random.Range(decoracionesMin, decoracionesMax + 1) * area;
+        Vector2 tamMundo = new Vector2(s.tam.x * tamCelda.x, s.tam.y * tamCelda.y);
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            Sprite spr = deco[Random.Range(0, deco.Length)];
+            if (spr == null) continue;
+
+            GameObject d = new GameObject("Decoracion");
+            d.transform.SetParent(raiz, false);
+            d.transform.position = centro + PosInterior(tamMundo);
+
+            SpriteRenderer sr = d.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = -9;                 // sobre el piso, debajo de todo lo demas
+            sr.flipX = Random.value < 0.5f;       // variedad gratis
+
+            float tam = Random.Range(0.8f, 1.6f);
+            UtilJuego.AplicarSprite(d, spr, new Vector2(tam, tam), true, false);
+        }
     }
 
     Transform NuevoContenedor(string nombre, Transform padre)
@@ -411,7 +507,7 @@ public class GeneradorMapa : MonoBehaviour
         return t;
     }
 
-    void CrearBorde(Transform padre, Vector2 centroBorde, Vector2Int dir, bool esPuerta, List<Puerta> puertas)
+    void CrearBorde(Transform padre, Vector2 centroBorde, Vector2Int dir, bool esPuerta, List<Puerta> puertas, Vector2Int celda, Vector2Int vecino)
     {
         bool horizontal = dir.y != 0;       // borde arriba/abajo = segmento horizontal
         float largo = horizontal ? tamCelda.x : tamCelda.y;
@@ -423,9 +519,20 @@ public class GeneradorMapa : MonoBehaviour
             return;
         }
 
+        // La pared entre dos salas se comparte: si la puerta ya la creo la OTRA sala,
+        // la reutilizo (asi hay UNA sola puerta y no dos superpuestas con estados distintos).
+        long clave = ClaveArista(celda, vecino);
+        Puerta existente;
+        if (puertasCompartidas.TryGetValue(clave, out existente) && existente != null)
+        {
+            puertas.Add(existente);
+            return;   // no vuelvo a crear paredes ni puerta: ya estan puestas por la otra sala
+        }
+
         // con puerta: 2 trozos de pared + 1 puerta en el centro
         float gap = Mathf.Min(anchoPuerta, largo * 0.6f);
         float stub = (largo - gap) / 2f;
+        Puerta nueva;
 
         if (horizontal)
         {
@@ -434,7 +541,7 @@ public class GeneradorMapa : MonoBehaviour
                 CrearCuadro("Pared", padre, centroBorde + new Vector2(-(gap / 2f + stub / 2f), 0f), new Vector2(stub, grosorPared), spritePared, colorPared, true, 0);
                 CrearCuadro("Pared", padre, centroBorde + new Vector2( (gap / 2f + stub / 2f), 0f), new Vector2(stub, grosorPared), spritePared, colorPared, true, 0);
             }
-            puertas.Add(CrearPuerta(padre, centroBorde, new Vector2(gap, grosorPared)));
+            nueva = CrearPuerta(padre, centroBorde, new Vector2(gap, grosorPared));
         }
         else
         {
@@ -443,8 +550,21 @@ public class GeneradorMapa : MonoBehaviour
                 CrearCuadro("Pared", padre, centroBorde + new Vector2(0f, -(gap / 2f + stub / 2f)), new Vector2(grosorPared, stub), spritePared, colorPared, true, 0);
                 CrearCuadro("Pared", padre, centroBorde + new Vector2(0f,  (gap / 2f + stub / 2f)), new Vector2(grosorPared, stub), spritePared, colorPared, true, 0);
             }
-            puertas.Add(CrearPuerta(padre, centroBorde, new Vector2(grosorPared, gap)));
+            nueva = CrearPuerta(padre, centroBorde, new Vector2(grosorPared, gap));
         }
+
+        puertasCompartidas[clave] = nueva;
+        puertas.Add(nueva);
+    }
+
+    // Clave unica de la pared entre dos celdas (independiente del orden de las salas)
+    long ClaveArista(Vector2Int a, Vector2Int b)
+    {
+        long codeA = a.x * (long)alto + a.y;
+        long codeB = b.x * (long)alto + b.y;
+        long lo = System.Math.Min(codeA, codeB);
+        long hi = System.Math.Max(codeA, codeB);
+        return lo * 100000L + hi;
     }
 
     GameObject CrearCuadro(string nombre, Transform padre, Vector2 local, Vector2 size, Sprite sprite, Color color, bool collider, int orden)
@@ -475,22 +595,56 @@ public class GeneradorMapa : MonoBehaviour
 
     Puerta CrearPuerta(Transform padre, Vector2 local, Vector2 size)
     {
+        // RAIZ: la barrera (collider) en unidades de mundo, escala 1.
+        // El sprite va en un hijo aparte para poder intercambiarlo (abierta/cerrada)
+        // sin depender del modo Tiled/Sliced, que no cambiaba bien el sprite.
         GameObject go = new GameObject("Puerta");
         go.transform.SetParent(padre, false);
         go.transform.localPosition = local;
-        go.transform.localScale = new Vector3(size.x, size.y, 1f);
+        go.transform.localScale = Vector3.one;
 
-        SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
+        BoxCollider2D col = go.AddComponent<BoxCollider2D>();   // hueco real de la puerta, en el mundo
+        col.size = size;
+
+        GameObject vis = new GameObject("Visual");
+        vis.transform.SetParent(go.transform, false);
+        SpriteRenderer sr = vis.AddComponent<SpriteRenderer>();
         sr.sprite = Blanco();
         sr.sortingOrder = 1;
-
-        BoxCollider2D col = go.AddComponent<BoxCollider2D>();   // 1x1 * escala = size
 
         Puerta p = go.AddComponent<Puerta>();
         p.barrera = col;
         p.sprite = sr;
-        p.spriteAbierta = Verde();
-        p.spriteCerrada = Rojo();
+        p.tamHueco = size;
+
+        // Sprites de puerta desde el Banco de Sprites (si hay)
+        BancoSprites banco = BancoSprites.Cargar();
+        Sprite abierta = (banco != null) ? banco.puertaAbierta : null;
+        Sprite cerrada = (banco != null) ? banco.puertaCerrada : null;
+
+        if (abierta != null || cerrada != null)
+        {
+            p.spriteAbierta = (abierta != null) ? abierta : cerrada;
+            if (cerrada != null)
+            {
+                p.spriteCerrada = cerrada;
+                p.colorCerrada = Color.white;
+            }
+            else
+            {
+                // Solo asignaste la puerta abierta: reuso ese sprite tintado de rojo al cerrar
+                p.spriteCerrada = abierta;
+                p.colorCerrada = new Color(1f, 0.45f, 0.45f);
+            }
+            if (banco.muro != null) p.spriteMuro = banco.muro;
+        }
+        else
+        {
+            // Sin sprites: cuadros de color de siempre (verde = abierta, rojo = cerrada)
+            p.spriteAbierta = Verde();
+            p.spriteCerrada = Rojo();
+        }
+
         p.VolverPuerta();   // empieza abierta
         return p;
     }
@@ -535,13 +689,24 @@ public class GeneradorMapa : MonoBehaviour
 
         e.AddComponent<CircleCollider2D>();
 
+        // Sprite del Banco de Sprites segun el tipo (si no hay, queda el color de siempre)
+        BancoSprites banco = BancoSprites.Cargar();
+        Sprite sprEnemigo = null;
+        if (banco != null)
+            sprEnemigo = (tipo == 0) ? banco.enemigoPerseguidor
+                       : (tipo == 1) ? banco.enemigoDisparador
+                       : (tipo == 2) ? banco.enemigoDiagonal
+                       : banco.enemigoTorreta;
+        bool conSprite = sprEnemigo != null;
+        if (conSprite) UtilJuego.AplicarSprite(e, sprEnemigo, new Vector2(1.1f, 1.1f));
+
         Botin botin = e.AddComponent<Botin>();
         botin.prefabMoneda = prefabMoneda; botin.probabilidad = probMoneda;
 
         // Torreta estatica: SIN Rigidbody dinamico (queda fija) y dispara por linea de vision
         if (tipo == 3)
         {
-            sr.color = new Color(0.30f, 0.80f, 0.85f);
+            if (!conSprite) sr.color = new Color(0.30f, 0.80f, 0.85f);
             EnemigoTorreta torreta = e.AddComponent<EnemigoTorreta>();
             torreta.prefabProyectil = prefabBala;
             return e;
@@ -553,18 +718,18 @@ public class GeneradorMapa : MonoBehaviour
 
         if (tipo == 0)
         {
-            sr.color = new Color(0.85f, 0.22f, 0.22f);
+            if (!conSprite) sr.color = new Color(0.85f, 0.22f, 0.22f);
             e.AddComponent<Enemy>();
         }
         else if (tipo == 1)
         {
-            sr.color = new Color(0.92f, 0.55f, 0.20f);
+            if (!conSprite) sr.color = new Color(0.92f, 0.55f, 0.20f);
             Enemigo disp = e.AddComponent<Enemigo>();
             disp.prefabProyectil = prefabBala;
         }
         else
         {
-            sr.color = new Color(0.62f, 0.32f, 0.82f);
+            if (!conSprite) sr.color = new Color(0.62f, 0.32f, 0.82f);
             EnemigoDisparoX x = e.AddComponent<EnemigoDisparoX>();
             x.prefabProyectil = prefabBala;
         }
@@ -573,6 +738,16 @@ public class GeneradorMapa : MonoBehaviour
 
     void SpawnJefe(Transform cont, List<GameObject> lista, Vector2 centro)
     {
+        // NIVEL 2: jefe estilo "The Adversary" (rayo + persecucion + teletransporte)
+        if (nivel >= 2)
+        {
+            if (prefabJefeNivel2 != null)
+                lista.Add(Instantiate(prefabJefeNivel2, centro, Quaternion.identity, cont));
+            else
+                SpawnJefeAdversario(cont, lista, centro);
+            return;
+        }
+
         if (prefabJefe != null)
         {
             lista.Add(Instantiate(prefabJefe, centro, Quaternion.identity, cont));
@@ -594,6 +769,11 @@ public class GeneradorMapa : MonoBehaviour
 
         e.AddComponent<CircleCollider2D>();
 
+        // Sprite del jefe desde el Banco de Sprites (si hay)
+        BancoSprites bancoJ = BancoSprites.Cargar();
+        if (bancoJ != null && bancoJ.jefeNivel1 != null)
+            UtilJuego.AplicarSprite(e, bancoJ.jefeNivel1, new Vector2(2.6f, 2.6f));
+
         Jefe jefe = e.AddComponent<Jefe>();
         jefe.prefabProyectil = prefabBala;
 
@@ -601,6 +781,98 @@ public class GeneradorMapa : MonoBehaviour
         botin.prefabMoneda = prefabMoneda; botin.probabilidad = 1f; botin.minMonedas = 3; botin.maxMonedas = 6;
 
         lista.Add(e);
+    }
+
+    // Jefe del nivel 2 construido por codigo (inspirado en The Adversary de Isaac)
+    void SpawnJefeAdversario(Transform cont, List<GameObject> lista, Vector2 centro)
+    {
+        GameObject e = new GameObject("JefeAdversario");
+        e.transform.position = centro;
+        e.transform.SetParent(cont, true);
+        PonerTagEnemy(e);
+        e.transform.localScale = new Vector3(2.6f, 2.6f, 1f);
+
+        SpriteRenderer sr = e.AddComponent<SpriteRenderer>();
+        sr.sprite = Blanco(); sr.color = new Color(0.15f, 0.15f, 0.18f); sr.sortingOrder = 5;
+
+        Rigidbody2D rb = e.AddComponent<Rigidbody2D>();
+        rb.gravityScale = 0f; rb.freezeRotation = true;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        e.AddComponent<CircleCollider2D>();
+
+        // Sprite del Adversario desde el Banco de Sprites. Si no hay, cuadro
+        // oscuro con "ojos" rojos para que se note quien es.
+        BancoSprites bancoA = BancoSprites.Cargar();
+        if (bancoA != null && bancoA.jefeNivel2 != null)
+        {
+            UtilJuego.AplicarSprite(e, bancoA.jefeNivel2, new Vector2(2.6f, 2.6f));
+        }
+        else
+        {
+            GameObject ojos = new GameObject("Ojos");
+            ojos.transform.SetParent(e.transform, false);
+            ojos.transform.localPosition = new Vector3(0f, 0.18f, 0f);
+            ojos.transform.localScale = new Vector3(0.55f, 0.12f, 1f);
+            SpriteRenderer srOjos = ojos.AddComponent<SpriteRenderer>();
+            srOjos.sprite = Blanco(); srOjos.color = new Color(0.9f, 0.1f, 0.1f); srOjos.sortingOrder = 6;
+        }
+
+        e.AddComponent<JefeAdversario>();
+
+        Botin botin = e.AddComponent<Botin>();
+        botin.prefabMoneda = prefabMoneda; botin.probabilidad = 1f; botin.minMonedas = 5; botin.maxMonedas = 9;
+
+        lista.Add(e);
+    }
+
+    // ============================ SALAS ESPECIALES ============================
+    // Sala del TESORO: un objeto gratis al centro. En nivel 2 puede venir vacia.
+    void ConstruirTesoro(Vector2 centro, Transform raiz)
+    {
+        if (nivel >= 2 && Random.value < probSalaEspecialVacia) return;   // mala suerte: vacia
+
+        DefObjeto def = BancoObjetos.ElegirAlAzar(nivel);
+        if (def != null)
+            PedestalObjeto.Crear(centro, def, 0, raiz);
+    }
+
+    // TIENDA: siempre hay un corazon en venta; ademas, con cierta probabilidad,
+    // UN unico objeto (precio configurable, por defecto 10). A veces solo hay corazon.
+    void ConstruirTienda(Vector2 centro, Transform raiz)
+    {
+        if (nivel >= 2 && Random.value < probSalaEspecialVacia) return;   // mala suerte: vacia
+
+        bool hayObjeto = Random.value < probObjetoEnTienda;
+        if (hayObjeto)
+        {
+            DefObjeto def = BancoObjetos.ElegirAlAzar(nivel);
+            if (def != null)
+                PedestalObjeto.Crear(centro + Vector2.left * 2.5f, def, precioObjetoTienda, raiz);
+        }
+
+        Vector2 posCorazon = hayObjeto ? centro + Vector2.right * 2.5f : centro;
+        Corazon.Crear(posCorazon, precioCorazonTienda, raiz);
+    }
+
+    // ============================ MUERTE DEL JEFE ============================
+    /// <summary>
+    /// La llaman Jefe (nivel 1) y JefeAdversario (nivel 2) al morir.
+    /// Suelta un corazon y crea el portal: nivel 1 -> escena "2"; nivel 2 -> menu.
+    /// </summary>
+    public void AlMorirJefe(Vector3 pos)
+    {
+        Corazon.Crear(pos + Vector3.right * 1.3f, 0, transform);
+
+        if (nivel == 1)
+        {
+            PortalNivel.Crear(centroSalaJefe, "2", "NIVEL 2", true);
+        }
+        else
+        {
+            Corazon.Crear(pos + Vector3.left * 1.3f, 0, transform);   // premio extra
+            PortalNivel.Crear(centroSalaJefe, "Menu", "SALIDA", false);
+        }
     }
 
     // Coloca obstaculos por PATRONES (uno por celda). Nunca se enciman ni tapan puertas.
@@ -635,18 +907,17 @@ public class GeneradorMapa : MonoBehaviour
 
     GameObject CrearObstaculo(bool destructible, Vector2 worldPos, Transform cont)
     {
+        // RAIZ: solo el collider SOLIDO (tamaño fijo en el mundo) + la logica.
+        // El sprite va en un hijo aparte, asi el collider NUNCA depende del sprite
+        // (esto evita que el jugador o las balas atraviesen el obstaculo).
         GameObject o = new GameObject(destructible ? "Caja" : "Roca");
         o.transform.position = worldPos;
         o.transform.SetParent(cont, true);
-        o.transform.localScale = new Vector3(1.4f, 1.4f, 1f);
+        o.transform.localScale = Vector3.one;   // el collider queda en unidades de mundo
 
-        SpriteRenderer sr = o.AddComponent<SpriteRenderer>();
-        Sprite sp = destructible ? spriteObstaculoCaja : spriteObstaculoRoca;
-        if (sp != null) sr.sprite = sp;
-        else { sr.sprite = Blanco(); sr.color = destructible ? new Color(0.55f, 0.4f, 0.22f) : new Color(0.45f, 0.45f, 0.5f); }
-        sr.sortingOrder = 4;
-
-        o.AddComponent<BoxCollider2D>();
+        BoxCollider2D col = o.AddComponent<BoxCollider2D>();
+        col.isTrigger = false;                  // SOLIDO: frena al jugador y a las balas
+        col.size = new Vector2(1.4f, 1.4f);
 
         Obstaculo obs = o.AddComponent<Obstaculo>();
         obs.destructible = destructible;
@@ -656,6 +927,22 @@ public class GeneradorMapa : MonoBehaviour
             Botin b = o.AddComponent<Botin>();
             b.prefabMoneda = prefabMoneda; b.probabilidad = 0.5f;
             obs.botin = b;
+        }
+
+        // VISUAL (hijo): sprite del Banco o cuadro de color, escalado para llenar ~1.4
+        GameObject vis = new GameObject("Visual");
+        vis.transform.SetParent(o.transform, false);
+        SpriteRenderer sr = vis.AddComponent<SpriteRenderer>();
+        sr.sortingOrder = 4;
+
+        Sprite sp = destructible ? spriteObstaculoCaja : spriteObstaculoRoca;
+        if (sp != null)
+            UtilJuego.AplicarSprite(vis, sp, new Vector2(1.4f, 1.4f), true, false);   // solo escala el visual
+        else
+        {
+            sr.sprite = Blanco();
+            sr.color = destructible ? new Color(0.55f, 0.4f, 0.22f) : new Color(0.45f, 0.45f, 0.5f);
+            vis.transform.localScale = new Vector3(1.4f, 1.4f, 1f);
         }
         return o;
     }
@@ -750,6 +1037,7 @@ public class GeneradorMapa : MonoBehaviour
     Sprite Blanco() { if (_blanco == null) _blanco = SpriteColor(Color.white); return _blanco; }
     Sprite Verde() { if (_verde == null) _verde = SpriteColor(new Color(0.30f, 0.75f, 0.35f)); return _verde; }
     Sprite Rojo() { if (_rojo == null) _rojo = SpriteColor(new Color(0.80f, 0.25f, 0.25f)); return _rojo; }
+    Sprite Dorado() { if (_dorado == null) _dorado = SpriteColor(new Color(0.95f, 0.78f, 0.25f)); return _dorado; }
 
     Sprite SpriteColor(Color c)
     {

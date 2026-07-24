@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181f1fee5587fb14a8cc1993fba158db, type: 3}
+  m_Name: BancoSprites
+  m_EditorClassIdentifier: 
+  enemigoPerseguidor: {fileID: 0}
+  enemigoDisparador: {fileID: 0}
+  enemigoDiagonal: {fileID: 0}
+  enemigoTorreta: {fileID: 0}
+  jefeNivel1: {fileID: 0}
+  jefeNivel2: {fileID: 0}
+  roca: {fileID: -1182494141, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  caja: {fileID: 0}
+  suelo: {fileID: 1909168643, guid: 67113771298774a47a607094b9e49149, type: 3}
+  pared: {fileID: 283886694, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  decoraciones:
+  - {fileID: 1237393073, guid: 67113771298774a47a607094b9e49149, type: 3}
+  - {fileID: -152906003, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  sueloNivel2: {fileID: 1950213803, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  paredNivel2: {fileID: -2129243169, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  decoracionesNivel2: []
+  puertaAbierta: {fileID: -7867629, guid: 0e2226f9cd4734f40b30b0fe1fe0fa14, type: 3}
+  puertaCerrada: {fileID: -1960281044, guid: 67113771298774a47a607094b9e49149, type: 3}
+  puertaPeaje: {fileID: -1669047057, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  muro: {fileID: 1610860077, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  corazon: {fileID: 0}
+  granada: {fileID: 0}
+  explosion: {fileID: 0}
+  portal: {fileID: 21300000, guid: 6519178799bd2a54fb6c6306a13d6d0e, type: 2}
+  pedestalBase: {fileID: -2133577470, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  objetos: []
