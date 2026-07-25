@@ -22,14 +22,15 @@ public static class BancoObjetos
 {
     static readonly DefObjeto[] TODOS =
     {
-        new DefObjeto{ id="dano_up",     nombre="Daño+",           color=new Color(0.95f,0.45f,0.15f), peso=10, descripcion="+0.3 de daño" },
-        new DefObjeto{ id="vel_up",      nombre="Balas Veloces",   color=new Color(0.25f,0.85f,0.95f), peso=10, descripcion="+3 velocidad de bala" },
-        new DefObjeto{ id="cadencia_up", nombre="Lágrimas+",       color=new Color(0.45f,0.60f,0.95f), peso=10, descripcion="Disparas más seguido" },
-        new DefObjeto{ id="doble",       nombre="Disparo Doble",   color=new Color(0.95f,0.90f,0.30f), peso=9,  descripcion="+1 bala por disparo" },
-        new DefObjeto{ id="quad",        nombre="Disparo Cuádruple", color=new Color(0.40f,0.90f,0.40f), peso=7, descripcion="+3 balas por disparo" },
-        new DefObjeto{ id="granadas",    nombre="Lanzagranadas",   color=new Color(0.45f,0.55f,0.30f), peso=7,  descripcion="Granadas explosivas (¡cuidado de cerca!)" },
-        new DefObjeto{ id="brimstone",   nombre="Rayo Carmesí",    color=new Color(0.75f,0.10f,0.12f), peso=3,  descripcion="Rayo que atraviesa, +1.0 daño" },
-        new DefObjeto{ id="sagrado",     nombre="Corazón Sagrado", color=new Color(1.00f,0.85f,0.90f), peso=2,  descripcion="Balas teledirigidas, +1.5 daño" },
+        // Nombres con tematica de casino / ruleta (el juego es "All-on-red")
+        new DefObjeto{ id="dano_up",     nombre="As de Picas",     color=new Color(0.95f,0.45f,0.15f), peso=10, descripcion="+0.3 de daño" },
+        new DefObjeto{ id="vel_up",      nombre="Manos Rápidas",   color=new Color(0.25f,0.85f,0.95f), peso=10, descripcion="+3 velocidad de bala" },
+        new DefObjeto{ id="cadencia_up", nombre="Máquina Caliente", color=new Color(0.45f,0.60f,0.95f), peso=10, descripcion="Disparas más balas" },
+        new DefObjeto{ id="doble",       nombre="Doble o Nada",    color=new Color(0.95f,0.90f,0.30f), peso=9,  descripcion="+1 bala por disparo" },
+        new DefObjeto{ id="quad",        nombre="Cuatro Ases",     color=new Color(0.40f,0.90f,0.40f), peso=7,  descripcion="+3 balas por disparo" },
+        new DefObjeto{ id="granadas",    nombre="Dados Explosivos", color=new Color(0.45f,0.55f,0.30f), peso=7,  descripcion="Granadas explosivas (¡cuidado de cerca!)" },
+        new DefObjeto{ id="brimstone",   nombre="Todo al Rojo",    color=new Color(0.75f,0.10f,0.12f), peso=3,  descripcion="Rayo que atraviesa, +1.0 daño" },
+        new DefObjeto{ id="sagrado",     nombre="Jackpot",         color=new Color(1.00f,0.85f,0.90f), peso=2,  descripcion="Balas teledirigidas, +1.5 daño" },
     };
 
     // Pools por nivel (ids). Edita esto para cambiar que aparece en cada piso.

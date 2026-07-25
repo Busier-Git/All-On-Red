@@ -18,8 +18,8 @@ MonoBehaviour:
   enemigoTorreta: {fileID: 0}
   jefeNivel1: {fileID: 0}
   jefeNivel2: {fileID: 0}
-  roca: {fileID: -1182494141, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
-  caja: {fileID: 0}
+  roca: {fileID: -553204184, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  caja: {fileID: -550767928, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
   suelo: {fileID: 1909168643, guid: 67113771298774a47a607094b9e49149, type: 3}
   pared: {fileID: 283886694, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
   decoraciones:
@@ -32,9 +32,11 @@ MonoBehaviour:
   puertaCerrada: {fileID: -1960281044, guid: 67113771298774a47a607094b9e49149, type: 3}
   puertaPeaje: {fileID: -1669047057, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
   muro: {fileID: 1610860077, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
-  corazon: {fileID: 0}
+  corazon: {fileID: -1623132501, guid: 78f5c234325156142895bb51f47b314b, type: 3}
   granada: {fileID: 0}
   explosion: {fileID: 0}
   portal: {fileID: 21300000, guid: 6519178799bd2a54fb6c6306a13d6d0e, type: 2}
-  pedestalBase: {fileID: -2133577470, guid: d25ff13104f447b458bebf72737f71cd, type: 3}
+  pedestalBase: {fileID: 0}
+  maquina: {fileID: 1762885667, guid: 3b36c50e17dd8e645be41bf5b1ace75d, type: 3}
+  maquinaApagada: {fileID: -1551546018, guid: 3b36c50e17dd8e645be41bf5b1ace75d, type: 3}
   objetos: []

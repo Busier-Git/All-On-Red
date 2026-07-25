@@ -51,11 +51,14 @@ public class GeneradorMapa : MonoBehaviour
     [HideInInspector] public int nivel = 1;
 
     [Header("Objetos y tienda")]
-    public int precioObjetoTienda = 10;
     public int precioCorazonTienda = 3;
     [Range(0f, 1f)] public float probObjetoEnTienda = 0.7f;      // si falla: la tienda solo tiene corazon
     public int costoSalaEspecialNivel2 = 5;                      // peaje de tesoro/tienda en nivel 2
     [Range(0f, 1f)] public float probSalaEspecialVacia = 0.25f;  // nivel 2: la sala puede estar vacia
+
+    [Header("Maquina tragamonedas (tesoro y tienda)")]
+    public int precioMaquina = 5;                               // cuesta jugar
+    [Range(0f, 1f)] public float probMaquina = 0.5f;            // 50/50 que te de el objeto
 
     [Header("Sprites opcionales (vacio = usa el Banco de Sprites, y si no, colores)")]
     public Sprite spriteSuelo;
@@ -827,18 +830,19 @@ public class GeneradorMapa : MonoBehaviour
     }
 
     // ============================ SALAS ESPECIALES ============================
-    // Sala del TESORO: un objeto gratis al centro. En nivel 2 puede venir vacia.
+    // Sala del TESORO: una MAQUINA tragamonedas (5 monedas por jugar, 50/50 que de el
+    // objeto). En nivel 2 puede venir vacia.
     void ConstruirTesoro(Vector2 centro, Transform raiz)
     {
         if (nivel >= 2 && Random.value < probSalaEspecialVacia) return;   // mala suerte: vacia
 
         DefObjeto def = BancoObjetos.ElegirAlAzar(nivel);
         if (def != null)
-            PedestalObjeto.Crear(centro, def, 0, raiz);
+            MaquinaObjeto.Crear(centro, def, precioMaquina, probMaquina, raiz);
     }
 
     // TIENDA: siempre hay un corazon en venta; ademas, con cierta probabilidad,
-    // UN unico objeto (precio configurable, por defecto 10). A veces solo hay corazon.
+    // UNA maquina tragamonedas. A veces solo hay corazon.
     void ConstruirTienda(Vector2 centro, Transform raiz)
     {
         if (nivel >= 2 && Random.value < probSalaEspecialVacia) return;   // mala suerte: vacia
@@ -848,7 +852,7 @@ public class GeneradorMapa : MonoBehaviour
         {
             DefObjeto def = BancoObjetos.ElegirAlAzar(nivel);
             if (def != null)
-                PedestalObjeto.Crear(centro + Vector2.left * 2.5f, def, precioObjetoTienda, raiz);
+                MaquinaObjeto.Crear(centro + Vector2.left * 2.5f, def, precioMaquina, probMaquina, raiz);
         }
 
         Vector2 posCorazon = hayObjeto ? centro + Vector2.right * 2.5f : centro;

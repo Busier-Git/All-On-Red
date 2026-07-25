@@ -73,7 +73,9 @@ public class BancoSprites : ScriptableObject
     public Sprite granada;
     public Sprite explosion;
     public Sprite portal;               // portal al siguiente nivel
-    public Sprite pedestalBase;         // la base donde flota el objeto
+    public Sprite pedestalBase;         // la base donde flota el objeto (ya no se usa en la maquina)
+    public Sprite maquina;              // maquina tragamonedas de las salas especiales
+    public Sprite maquinaApagada;       // (opcional) sprite de la maquina apagada al ganar
 
     [Header("Objetos (sprite por id: dano_up, vel_up, cadencia_up, doble, quad, granadas, brimstone, sagrado)")]
     public EntradaObjeto[] objetos;

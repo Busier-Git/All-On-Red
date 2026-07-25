@@ -25,15 +25,23 @@ public static class UtilJuego
         return _blanco;
     }
 
-    /// <summary>Fuente por defecto (Unity 2022 usa LegacyRuntime.ttf).</summary>
+    /// <summary>
+    /// Tipografia del juego. Primero busca una fuente pixel-art personalizada en
+    /// Resources (arrastra un .ttf y renombralo "FuentePixel"); si no hay, usa la
+    /// fuente por defecto de Unity. La usan todos los textos del mundo y el menu.
+    /// </summary>
     public static Font Fuente()
     {
         if (_fuente == null)
         {
-            try { _fuente = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); } catch { }
+            _fuente = Resources.Load<Font>("FuentePixel");   // tu fuente pixel-art (opcional)
             if (_fuente == null)
             {
-                try { _fuente = Resources.GetBuiltinResource<Font>("Arial.ttf"); } catch { }
+                try { _fuente = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); } catch { }
+                if (_fuente == null)
+                {
+                    try { _fuente = Resources.GetBuiltinResource<Font>("Arial.ttf"); } catch { }
+                }
             }
         }
         return _fuente;

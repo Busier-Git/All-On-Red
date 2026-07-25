@@ -173,18 +173,26 @@ public class Player : MonoBehaviour
         if (bufferTrucos.Length > 12)
             bufferTrucos = bufferTrucos.Substring(bufferTrucos.Length - 12);
 
+        // Los trucos siguen siendo "brim" y "sacred" y dan los mismos objetos;
+        // solo el texto usa el nombre actual del banco de objetos (asi nunca se desincroniza).
         if (bufferTrucos.EndsWith("brim"))
         {
             bufferTrucos = "";
             AplicarObjeto("brimstone");
-            AvisoTruco("¡Rayo Carmesí!");
+            AvisoTruco("¡" + NombreObjeto("brimstone") + "!");
         }
         else if (bufferTrucos.EndsWith("sacred"))
         {
             bufferTrucos = "";
             AplicarObjeto("sagrado");
-            AvisoTruco("¡Corazón Sagrado!");
+            AvisoTruco("¡" + NombreObjeto("sagrado") + "!");
         }
+    }
+
+    private string NombreObjeto(string id)
+    {
+        DefObjeto d = BancoObjetos.Def(id);
+        return (d != null) ? d.nombre : id;
     }
 
     private void AvisoTruco(string mensaje)
