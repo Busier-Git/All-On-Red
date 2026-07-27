@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c4279c5af72234aa048dd371783b5c, type: 3}
   m_Name: BancoAudio
   m_EditorClassIdentifier: 
-  musicaMenu: {fileID: 0}
-  musicaNivel1: {fileID: 0}
-  musicaNivel2: {fileID: 0}
-  disparo: {fileID: 0}
+  musicaMenu: {fileID: 8300000, guid: 1deb01b357cfd1e4e9c4e90e9986b983, type: 3}
+  musicaNivel1: {fileID: 8300000, guid: c26194a8515d48549b33fe917f4cb01c, type: 3}
+  musicaNivel2: {fileID: 8300000, guid: d9a67195786bb4548a6b9ad271094b6f, type: 3}
+  disparo: {fileID: 8300000, guid: 35be06339d2a5254fbf23228395ad515, type: 3}
   disparoRayo: {fileID: 0}
   disparoGranada: {fileID: 0}
-  explosion: {fileID: 0}
-  jugadorDano: {fileID: 0}
-  enemigoMuere: {fileID: 0}
-  jefeRayo: {fileID: 0}
-  jefeTeleport: {fileID: 0}
-  recogerMoneda: {fileID: 0}
+  explosion: {fileID: 8300000, guid: 043bb8e62fdc6b24ebed8745699448a6, type: 3}
+  jugadorDano: {fileID: 8300000, guid: 7778407443a4b5b4e9514287c4703ec7, type: 3}
+  enemigoMuere: {fileID: 8300000, guid: f6f7057949a2b404cbfcda19ed77dcd4, type: 3}
+  jefeRayo: {fileID: 8300000, guid: e29e120124fb5b345b36f8737138aef2, type: 3}
+  jefeTeleport: {fileID: 8300000, guid: 78ba722ed20ecfe44821ad69df3882b1, type: 3}
+  recogerMoneda: {fileID: 8300000, guid: a336b25dfe8786c448388f2b4f974d10, type: 3}
   recogerObjeto: {fileID: 0}
   recogerCorazon: {fileID: 0}
   abrirPuerta: {fileID: 0}
